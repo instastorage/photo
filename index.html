@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTABASE</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/2/29/Instabase-logo.png">
+    <style>
+        *{
+            background: #161b22;
+
+        }
+        #img{
+            width:270px;
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top:90px;
+        }
+        .head{
+           background:#323d4d;
+        }
+        .logo{
+            width:250px;
+            background: none;
+            display: block;
+            margin-left:10px;            
+        }
+        h1{
+            display: block;
+            margin: auto;
+            text-align: center;
+            background: none;
+            color: white;
+            font-family: monospace;
+            margin-top:30px;
+        }
+        .new{
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top:40px;
+        }
+        .next{
+           width:150px;
+           height:35px;
+           background: rgb(51, 133, 255);
+           border: none;
+           color: white;
+           border-radius: 5px;
+           
+
+        }
+        p{
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top:80px;
+            font-size:12px;
+            width:250px;
+            font-family: monospace;
+            color: #284669;
+        }
+        .d{
+            margin: auto;
+            text-align: center;
+            display: block;
+            margin-top:200px;
+            width:200px;
+            height:35px;
+            border: none;
+            background: tomato;
+            color: white;
+            border-radius:3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <img class="logo" src="https://d1r8vl7h9sno9u.cloudfront.net/website/customer-logos/instabase.svg" alt="">
+        
+    </div>
+    <img id="img" src="" alt="">
+    <h1>947/👍</h1>
+   <div class="new">
+    <button class="next" onclick="next()">NEXT</button>
+   </div>
+   <button onclick="delet()" class="d">Удалить Фото</button>
+   <p>OOO "INSTABASE" © 2011-2022. Все права защищены. Лицензии МРИТИК РУз АА №0006345. Лицензия ЦБ РУз №1
+</p>
+<br>
+</body>
+<script>
+    localStorage.setItem('url','https://instastorage.github.io/instabase/userone/5.jpg')
+    var num=1;
+  function next(){
+   num++;
+   if(num == 8){
+       num=1;
+   }
+   var url=`https://instastorage.github.io/instabase/userone/${num}.jpg`;
+   localStorage.setItem('url',url)
+   document.getElementById('img').src=url;
+  }
+   function delet(){
+       var u=localStorage.getItem('url')
+       window.location='https://instastorage.github.io/?img='+btoa(u)
+   }
+        var desire = location.search.slice(1).split("&")[0].split("=")[1]
+     document.getElementById('img').src=atob(desire);
+</script>
+</html>
